@@ -20,7 +20,4 @@ module.exports = function(app) {
   app.route('/task')
     .post(todoList.create_a_task)
     .get(todoList.read_a_task);
-
-  app.route('/task/user/done')
-    .post(todoList.update_a_task);
 };
