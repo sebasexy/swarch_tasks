@@ -10,6 +10,9 @@ module.exports = function(app) {
     .get(todoList.list_all_tasks_from_user)
     .put(todoList.update_a_task)
     .delete(todoList.delete_a_task);
+
+  app.route('/task/delete/user')
+    .delete(todoList.delete_for_user);
   
   app.route('/task/user/pending')
     .get(todoList.list_all_pending_tasks_from_user);

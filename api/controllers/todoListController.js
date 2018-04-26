@@ -66,3 +66,14 @@ exports.delete_a_task = function(req, res) {
     res.json({ message: 'Task successfully deleted' });
   });
 };
+
+exports.delete_for_user = function(req, res){
+  console.log("Delete for user: ", req.query.email)
+  Task.deleteMany({
+    email: req.query.email
+  }, function (err, task){
+    if(err)
+      res.send(err);
+    res.json({message: 'Deleted all information from user'});
+  });
+}
